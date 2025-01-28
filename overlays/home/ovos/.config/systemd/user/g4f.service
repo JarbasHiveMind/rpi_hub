@@ -1,0 +1,8 @@
+[Unit]
+Description=GPT4Free
+
+[Service]
+ExecStart=%h/.venvs/ovos/bin/python -m g4f.api.run
+
+[Install]
+WantedBy=default.target
