@@ -1,0 +1,11 @@
+[Unit]
+Description=OVOS Persona Server (DuckDuckGo)
+PartOf=ovos.service
+After=ovos.service
+
+[Service]
+ExecStart=%h/.venvs/ovos/bin/python %h/.venvs/ovos/bin/ovos-persona-server --persona %h/.config/ovos_persona/wolfram_alpha.json --port 8401
+
+[Install]
+WantedBy=ovos.service
+

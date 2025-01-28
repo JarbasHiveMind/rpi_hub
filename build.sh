@@ -73,7 +73,7 @@ echo "Installing servers"
 uv pip install --pre ovos-tts-server ovos-translate-server ovos-stt-http-server ovos-persona-server
 
 echo "Installing plugins"
-uv pip install --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper ovos-solver-openai-persona-plugin
+uv pip install --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper ovos-solver-openai-persona-plugin ovos-solver-aiml-plugin ovos-solver-rivescript-plugin
 
 # Enable user systemd services.
 chmod 644 /home/$USER/.config/systemd/user/*.service
@@ -82,7 +82,14 @@ ln -s /home/$USER/.config/systemd/user/hivemind-core.service /home/$USER/.config
 ln -s /home/$USER/.config/systemd/user/ovos-piper.service /home/$USER/.config/systemd/user/default.target.wants/ovos-piper.service
 ln -s /home/$USER/.config/systemd/user/ovos-google-tx.service /home/$USER/.config/systemd/user/default.target.wants/ovos-google-tx.service
 ln -s /home/$USER/.config/systemd/user/ovos-whisper.service /home/$USER/.config/systemd/user/default.target.wants/ovos-whisper.service
-ln -s /home/$USER/.config/systemd/user/ovos-persona.service /home/$USER/.config/systemd/user/default.target.wants/ovos-persona.service
+ln -s /home/$USER/.config/systemd/user/ovos-aiml.service /home/$USER/.config/systemd/user/default.target.wants/ovos-aiml.service
+ln -s /home/$USER/.config/systemd/user/ovos-ddg.service /home/$USER/.config/systemd/user/default.target.wants/ovos-ddg.service
+ln -s /home/$USER/.config/systemd/user/ovos-rivescript.service /home/$USER/.config/systemd/user/default.target.wants/ovos-rivescript.service
+ln -s /home/$USER/.config/systemd/user/ovos-salamandra.service /home/$USER/.config/systemd/user/default.target.wants/ovos-salamandra.service
+ln -s /home/$USER/.config/systemd/user/ovos-llama.service /home/$USER/.config/systemd/user/default.target.wants/ovos-llama.service
+ln -s /home/$USER/.config/systemd/user/ovos-wordnet.service /home/$USER/.config/systemd/user/default.target.wants/ovos-wordnet.service
+ln -s /home/$USER/.config/systemd/user/ovos-wikipedia.service /home/$USER/.config/systemd/user/default.target.wants/ovos-wikipedia.service
+ln -s /home/$USER/.config/systemd/user/ovos-wolfram-alpha.service /home/$USER/.config/systemd/user/default.target.wants/ovos-wolfram-alpha.service
 
 echo "Ensuring log file permissions for ovos group..."
 mkdir -p /home/$USER/.local/state/mycroft

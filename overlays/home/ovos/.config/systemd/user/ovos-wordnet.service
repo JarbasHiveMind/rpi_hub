@@ -1,0 +1,11 @@
+[Unit]
+Description=OVOS Persona Server (Wordnet)
+PartOf=ovos.service
+After=ovos.service
+
+[Service]
+ExecStart=%h/.venvs/ovos/bin/python %h/.venvs/ovos/bin/ovos-persona-server --persona %h/.config/ovos_persona/wordnet.json --port 8402
+
+[Install]
+WantedBy=ovos.service
+
