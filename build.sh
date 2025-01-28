@@ -77,7 +77,7 @@ echo "Installing server plugins"
 uv pip install --no-progress --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper
 
 echo "Installing solver plugins"
-uv pip install --no-progress https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.2/llama_cpp_python-0.3.2-cp310-cp310-linux_aarch64.whl
+uv pip install --no-progress https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.2/llama_cpp_python-0.3.2-cp311-cp311-linux_aarch64.whl
 uv pip install --no-progress --pre ovos-solver-openai-persona-plugin ovos-solver-aiml-plugin ovos-solver-rivescript-plugin ovos-solver-gguf-plugin
 
 
