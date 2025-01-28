@@ -1,0 +1,11 @@
+[Unit]
+Description=OVOS Translate Server (Google Translate proxy)
+PartOf=ovos.service
+After=ovos.service
+
+[Service]
+ExecStart=%h/.venvs/ovos/bin/python %h/.venvs/ovos/bin/ovos-translate-server --tx-engine ovos-google-translate-plugin --detect-engine ovos-google-lang-detector-plugin
+
+[Install]
+WantedBy=ovos.service
+

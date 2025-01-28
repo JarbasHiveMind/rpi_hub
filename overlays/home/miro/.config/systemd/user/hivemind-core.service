@@ -1,0 +1,17 @@
+[Unit]
+Description=HiveMind Server
+PartOf=ovos.service
+After=ovos.service
+After=ovos-messagebus.service
+
+[Service]
+Type=notify
+ExecStart=%h/.venvs/ovos/bin/python /usr/libexec/hivemind-core-systemd
+TimeoutStartSec=10m
+TimeoutStopSec=1m
+Restart=on-failure
+StartLimitInterval=5min
+StartLimitBurst=4
+
+[Install]
+WantedBy=ovos.service

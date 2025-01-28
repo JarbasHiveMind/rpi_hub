@@ -1,0 +1,11 @@
+[Unit]
+Description=OVOS STT Server (FasterWhisper)
+PartOf=ovos.service
+After=ovos.service
+
+[Service]
+ExecStart=%h/.venvs/ovos/bin/python %h/.venvs/ovos/bin/ovos-stt-server --engine ovos-stt-plugin-fasterwhisper --port 8081
+
+[Install]
+WantedBy=ovos.service
+

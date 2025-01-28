@@ -1,0 +1,11 @@
+[Unit]
+Description=OVOS TTS Server (Piper)
+PartOf=ovos.service
+After=ovos.service
+
+[Service]
+ExecStart=%h/.venvs/ovos/bin/python %h/.venvs/ovos/bin/ovos-tts-server --engine ovos-tts-plugin-piper --cache --port 8082
+
+[Install]
+WantedBy=ovos.service
+
