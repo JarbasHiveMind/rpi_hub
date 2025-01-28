@@ -65,16 +65,21 @@ echo "Activating virtual environment..."
 source /home/$USER/.venvs/ovos/bin/activate
 
 echo "Installing hivemind"
-uv pip install --pre hivemind-core hivemind-audio-binary-protocol hivemind-http-protocol hivemind-redis-database hivemind-sqlite-database
-uv pip install git+https://github.com/JarbasHiveMind/HiveMind-matrix-bridge
-uv pip install git+https://github.com/JarbasHiveMind/HiveMind-deltachat-bridge
+uv pip install --no-progress --pre hivemind-core hivemind-audio-binary-protocol hivemind-http-protocol hivemind-redis-database hivemind-sqlite-database
+uv pip install --no-progress git+https://github.com/JarbasHiveMind/HiveMind-matrix-bridge
+uv pip install --no-progress git+https://github.com/JarbasHiveMind/HiveMind-deltachat-bridge
 
 echo "Installing servers"
-uv pip install --pre ovos-tts-server ovos-translate-server ovos-stt-http-server ovos-persona-server
-uv pip install -U g4f[all]
+uv pip install --no-progress --pre ovos-tts-server ovos-translate-server ovos-stt-http-server ovos-persona-server
+uv pip install --no-progress -U g4f[all]
 
-echo "Installing plugins"
-uv pip install --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper ovos-solver-openai-persona-plugin ovos-solver-aiml-plugin ovos-solver-rivescript-plugin ovos-solver-gguf-plugin
+echo "Installing server plugins"
+uv pip install --no-progress --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper
+
+echo "Installing solver plugins"
+uv pip install --no-progress https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.2/llama_cpp_python-0.3.2-cp310-cp310-linux_aarch64.whl
+uv pip install --no-progress --pre ovos-solver-openai-persona-plugin ovos-solver-aiml-plugin ovos-solver-rivescript-plugin ovos-solver-gguf-plugin
+
 
 # Enable user systemd services.
 chmod 644 /home/$USER/.config/systemd/user/*.service
