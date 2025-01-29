@@ -76,6 +76,12 @@ uv pip install --no-progress -U g4f[all]
 echo "Installing server plugins"
 uv pip install --no-progress --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper
 
+echo "Downloading whisper model..."
+python -c "from huggingface_hub import snapshot_download; repo_id = 'Systran/faster-whisper-base'; file_path = snapshot_download(repo_id=repo_id); print(f'Downloaded {repo_id}'); print(file_path)"
+# since script was run as root, we need to move downloaded files
+mkdir -p /home/ovos/.cache/huggingface/hub/
+mv /root/.cache/huggingface/hub/models--Systran--faster-whisper-base/ /home/ovos/.cache/huggingface/hub/models--Systran--faster-whisper-base/
+
 echo "Installing solver plugins"
 uv pip install --no-progress https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.2/llama_cpp_python-0.3.2-cp311-cp311-linux_aarch64.whl
 uv pip install --no-progress --pre ovos-solver-openai-persona-plugin ovos-solver-aiml-plugin ovos-solver-rivescript-plugin ovos-solver-gguf-plugin
