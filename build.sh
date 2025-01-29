@@ -74,7 +74,7 @@ uv pip install --no-progress --pre ovos-tts-server ovos-translate-server ovos-st
 uv pip install --no-progress -U g4f[all]
 
 echo "Installing server plugins"
-uv pip install --no-progress --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper
+uv pip install --no-progress --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper ovos-stt-plugin-chromium
 
 echo "Downloading whisper model..."
 python -c "from huggingface_hub import snapshot_download; repo_id = 'Systran/faster-whisper-tiny'; file_path = snapshot_download(repo_id=repo_id); print(f'Downloaded {repo_id}'); print(file_path)"
@@ -99,6 +99,7 @@ mkdir -p /home/$USER/.config/systemd/user/default.target.wants/
 ln -s /home/$USER/.config/systemd/user/hivemind-core.service /home/$USER/.config/systemd/user/default.target.wants/hivemind-core.service
 ln -s /home/$USER/.config/systemd/user/ovos-piper.service /home/$USER/.config/systemd/user/default.target.wants/ovos-piper.service
 ln -s /home/$USER/.config/systemd/user/ovos-google-tx.service /home/$USER/.config/systemd/user/default.target.wants/ovos-google-tx.service
+ln -s /home/$USER/.config/systemd/user/ovos-chromium.service /home/$USER/.config/systemd/user/default.target.wants/ovos-chromium.service
 ln -s /home/$USER/.config/systemd/user/ovos-whisper.service /home/$USER/.config/systemd/user/default.target.wants/ovos-whisper.service
 ln -s /home/$USER/.config/systemd/user/ovos-aiml.service /home/$USER/.config/systemd/user/default.target.wants/ovos-aiml.service
 ln -s /home/$USER/.config/systemd/user/ovos-ddg.service /home/$USER/.config/systemd/user/default.target.wants/ovos-ddg.service

@@ -1,4 +1,3 @@
-
 ```bash
 #!/bin/bash
 echo -e "\e[1;34m
@@ -53,11 +52,12 @@ echo -e "\e[1;34m
 |-------------------------------|-----------------------------------------------------------------------------------------------|--------------------------------------|------|----------------------|
 | HiveMind-core                 | hivemind-websocket-plugin                                                                     | `ovos-core `                         | 5678 |                      |
 |                               | hivemind-http-plugin                                                                          | `ovos-core`                          | 5679 |                      |
-| STT                           | ovos-stt-plugin-fasterwhisper                                                                 | `tiny`                               | 8081 | /stt                 |
+| STT                           | ovos-stt-plugin-chromium                                                                      | google proxy                         | 8085 | /stt                 |
+|                               | ovos-stt-plugin-fasterwhisper                                                                 | `tiny`                               | 8081 | /stt                 |
 | Language Detection<br>(audio) | ovos-stt-plugin-fasterwhisper                                                                 | `tiny`                               | 8081 | /lang_detect         |
 | Piper                         | ovos-tts-plugin-piper                                                                         | per language<br>(default `alan-low`) | 8082 | /v2/synthesize       |
-| Translation                   | ovos-google-translate-plugin                                                                  |                                      | 9686 | /translate           |
-| Language Detection<br>(text)  | ovos-google-lang-detector-plugin                                                              |                                      | 9686 | /detect              |
+| Translation                   | ovos-google-translate-plugin                                                                  | google proxy                         | 9686 | /translate           |
+| Language Detection<br>(text)  | ovos-google-lang-detector-plugin                                                              | google proxy                         | 9686 | /detect              |
 | Persona                       | [ovos-solver-gguf-plugin](https://github.com/TigreGotico/ovos-solver-gguf-plugin)             | tinyllama.json                       | 8337 | /v1/chat/completions |
 |                               | [ovos-solver-rivescript-plugin](https://github.com/OpenVoiceOS/ovos-solver-plugin-rivescript) | rivescript.json                      | 8501 | /v1/chat/completions |
 |                               | [ovos-solver-aiml-plugin](https://github.com/OpenVoiceOS/ovos-solver-plugin-aiml)             | aiml.json                            | 8500 | /v1/chat/completions |
@@ -88,12 +88,14 @@ rpi5 8GB
 ____
 
 **whisper tiny** ~25 seconds (`lang: auto`)
+
 ```bash
 2025-01-29 02:00:52.904 - voice - ovos_stt_plugin_server:execute:114 - DEBUG - chosen url http://0.0.0.0:8081/stt
 2025-01-29 02:01:18.573 - voice - ovos_dinkum_listener.voice_loop.voice_loop:_after_cmd:789 - INFO - Raw transcription: [('Tell me a joke.', 1.0)]
 ```
 
 **tiny llama** ~1 minute 30 seconds (first sentence) / ~10 seconds (follow up sentences)
+
 ```bash
 2025-01-29 02:10:26.629 - skills - ovos_core.intent_services:handle_utterance:416 - INFO - fallback_medium match: PipelineMatch(match_type=True, match_data={}, skill_id='skill-ovos-fallback-chatgpt.openvoiceos', utterance='Explain Quantum Mechanics', updated_session=None, handled=True)
 2025-01-29 02:11:43.992 - audio - ovos_audio.service:execute_tts:415 - INFO - Speak:  It is a branch of classical mechanics that is based on the principles of quantum theory, which is a branch of theoretical physics that describes the behavior of subatomic particles.
