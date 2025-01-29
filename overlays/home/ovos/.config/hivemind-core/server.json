@@ -22,6 +22,7 @@
       "stt": {
         "module": "ovos-stt-plugin-server",
         "ovos-stt-plugin-server": {
+          "lang": "auto",
           "urls": [
             "http://0.0.0.0:8081/stt",
             "https://stt.smartgic.io/mynorthai/stt",

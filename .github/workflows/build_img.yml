@@ -43,7 +43,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Configuring OVOS for English
+      - name: Creating HiveMind rpiHub
         uses: TigreGotico/rpi-image-modifier@main
         id: create-image
         env:
@@ -53,7 +53,7 @@ jobs:
           CONSTRAINTS: "https://github.com/OpenVoiceOS/ovos-releases/raw/refs/heads/main/constraints-alpha.txt"
         with:
           base-image-url: https://github.com/OpenVoiceOS/raspOVOS/releases/download/raspOVOS-DEV-bookworm-arm64-lite-2025-01-28/raspOVOS-DEV-bookworm-arm64-lite.img.xz
-          image-path: raspOVOS-english-bookworm-arm64-lite.img
+          image-path: HiveMind-rpiHub-bookworm-arm64-lite.img
           compress-with-xz: true
           shrink: true
           cache: false
