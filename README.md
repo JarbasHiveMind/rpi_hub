@@ -44,7 +44,7 @@ ____
 2025-01-29 02:01:18.573 - voice - ovos_dinkum_listener.voice_loop.voice_loop:_after_cmd:789 - INFO - Raw transcription: [('Tell me a joke.', 1.0)]
 ```
 
-**tiny llama** ~1 minute 30 seconds
+**tiny llama** ~1 minute 30 seconds (first sentence) / ~10 seconds (follow up sentences)
 ```bash
 2025-01-29 02:10:26.629 - skills - ovos_core.intent_services:handle_utterance:416 - INFO - fallback_medium match: PipelineMatch(match_type=True, match_data={}, skill_id='skill-ovos-fallback-chatgpt.openvoiceos', utterance='Explain Quantum Mechanics', updated_session=None, handled=True)
 2025-01-29 02:11:43.992 - audio - ovos_audio.service:execute_tts:415 - INFO - Speak:  It is a branch of classical mechanics that is based on the principles of quantum theory, which is a branch of theoretical physics that describes the behavior of subatomic particles.
