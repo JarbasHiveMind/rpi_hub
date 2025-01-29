@@ -4,7 +4,7 @@ PartOf=ovos.service
 After=ovos.service
 
 [Service]
-ExecStart=%h/.venvs/ovos/bin/python %h/.venvs/ovos/bin/ovos-persona-server --persona %h/.config/ovos_persona/rivescript.json--port 8501
+ExecStart=%h/.venvs/ovos/bin/python %h/.venvs/ovos/bin/ovos-persona-server --persona %h/.config/ovos_persona/rivescript.json --port 8501
 
 [Install]
 WantedBy=ovos.service
