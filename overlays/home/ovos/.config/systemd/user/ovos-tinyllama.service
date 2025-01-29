@@ -1,5 +1,5 @@
 [Unit]
-Description=OVOS Persona Server (AIML)
+Description=OVOS Persona Server (Tiny LLama)
 PartOf=ovos.service
 After=ovos.service
 

@@ -32,3 +32,22 @@ OVOS plugins integrate with OpenVoiceOS via mycroft.conf and also double as clie
 - persona (OpenAI compatible):
     - [ovos-skill-fallback-chatgpt](https://github.com/OpenVoiceOS/ovos-skill-fallback-chatgpt)
     - [ovos-solver-openai-persona-plugin](https://github.com/OpenVoiceOS/ovos-solver-openai-persona-plugin)
+
+### Timings
+
+rpi5 8GB
+____
+
+**whisper tiny** ~25 seconds (`lang: auto`)
+```bash
+2025-01-29 02:00:52.904 - voice - ovos_stt_plugin_server:execute:114 - DEBUG - chosen url http://0.0.0.0:8081/stt
+2025-01-29 02:01:18.573 - voice - ovos_dinkum_listener.voice_loop.voice_loop:_after_cmd:789 - INFO - Raw transcription: [('Tell me a joke.', 1.0)]
+```
+
+**tiny llama** ~1 minute 30 seconds
+```bash
+2025-01-29 02:10:26.629 - skills - ovos_core.intent_services:handle_utterance:416 - INFO - fallback_medium match: PipelineMatch(match_type=True, match_data={}, skill_id='skill-ovos-fallback-chatgpt.openvoiceos', utterance='Explain Quantum Mechanics', updated_session=None, handled=True)
+2025-01-29 02:11:43.992 - audio - ovos_audio.service:execute_tts:415 - INFO - Speak:  It is a branch of classical mechanics that is based on the principles of quantum theory, which is a branch of theoretical physics that describes the behavior of subatomic particles.
+2025-01-29 02:11:53.534 - audio - ovos_audio.service:execute_tts:415 - INFO - Speak: Quantum mechanics is based on the idea that particles have both wave and particle properties.
+2025-01-29 02:12:08.781 - audio - ovos_audio.service:execute_tts:415 - INFO - Speak:  This means that particles can be described as both waves and particles, and that their behavior is governed by the laws of physics that apply to waves.
+```
