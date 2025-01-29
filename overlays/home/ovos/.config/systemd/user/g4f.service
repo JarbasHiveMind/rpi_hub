@@ -2,7 +2,7 @@
 Description=GPT4Free
 
 [Service]
-ExecStart=%h/.venvs/ovos/bin/python -m g4f.api.run
+ExecStart=%h/.venvs/ovos/bin/python %h/.venvs/ovos/bin/g4f api --provider DDG
 
 [Install]
 WantedBy=default.target

@@ -1,0 +1,12 @@
+{
+  "name": "Mixtral-8x7b",
+  "solvers": [
+    "ovos-solver-openai-persona-plugin",
+    "ovos-solver-failure-plugin"
+  ],
+  "ovos-solver-openai-persona-plugin": {
+    "api_url": "http://0.0.0.0:1337/v1",
+    "key": "sk-xxx",
+    "model": "mixtral-8x7b"
+  }
+}
