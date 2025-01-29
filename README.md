@@ -3,7 +3,7 @@
 | service                       | plugin                                                                                        | default model                        | port | endpoint             |
 |-------------------------------|-----------------------------------------------------------------------------------------------|--------------------------------------|------|----------------------|
 | HiveMind-core                 | hivemind-websocket-plugin                                                                     | `ovos-core `                         | 5678 |                      |
-| HiveMind-core                 | hivemind-http-plugin                                                                          | `ovos-core`                          | 5679 |                      |
+|                               | hivemind-http-plugin                                                                          | `ovos-core`                          | 5679 |                      |
 | STT                           | ovos-stt-plugin-fasterwhisper                                                                 | `tiny`                               | 8081 | /stt                 |
 | Language Detection<br>(audio) | ovos-stt-plugin-fasterwhisper                                                                 | `tiny`                               | 8081 | /lang_detect         |
 | Piper                         | ovos-tts-plugin-piper                                                                         | per language<br>(default `alan-low`) | 8082 | /v2/synthesize       |
