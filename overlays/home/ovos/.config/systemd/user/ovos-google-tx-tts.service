@@ -1,0 +1,11 @@
+[Unit]
+Description=OVOS TTS Server (Google Translate Proxy)
+PartOf=ovos.service
+After=ovos.service
+
+[Service]
+ExecStart=%h/.venvs/ovos/bin/python %h/.venvs/ovos/bin/ovos-tts-server --engine ovos-tts-plugin-google-tx --cache --port 8090
+
+[Install]
+WantedBy=ovos.service
+

@@ -55,7 +55,8 @@ echo -e "\e[1;34m
 | STT                           | ovos-stt-plugin-chromium                                                                      | google proxy                         | 8085 | /stt                 |
 |                               | ovos-stt-plugin-fasterwhisper                                                                 | `tiny`                               | 8081 | /stt                 |
 | Language Detection<br>(audio) | ovos-stt-plugin-fasterwhisper                                                                 | `tiny`                               | 8081 | /lang_detect         |
-| Piper                         | ovos-tts-plugin-piper                                                                         | per language<br>(default `alan-low`) | 8082 | /v2/synthesize       |
+| TTS                           | ovos-tts-plugin-google-tx                                                                     | google proxy                         | 8090 | /v2/synthesize       |
+|                               | ovos-tts-plugin-piper                                                                         | per language<br>(default `alan-low`) | 8082 | /v2/synthesize       |
 | Translation                   | ovos-google-translate-plugin                                                                  | google proxy                         | 9686 | /translate           |
 | Language Detection<br>(text)  | ovos-google-lang-detector-plugin                                                              | google proxy                         | 9686 | /detect              |
 | Persona                       | [ovos-solver-gguf-plugin](https://github.com/TigreGotico/ovos-solver-gguf-plugin)             | tinyllama.json                       | 8337 | /v1/chat/completions |
