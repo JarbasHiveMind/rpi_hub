@@ -80,11 +80,12 @@ echo "Installing solver plugins"
 uv pip install --no-progress https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.2/llama_cpp_python-0.3.2-cp311-cp311-linux_aarch64.whl
 uv pip install --no-progress --pre ovos-solver-openai-persona-plugin ovos-solver-aiml-plugin ovos-solver-rivescript-plugin ovos-solver-gguf-plugin  -c $CONSTRAINTS
 
-echo "Downloading tiny llama model..."
-python -c "from huggingface_hub import hf_hub_download; repo_id = 'TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF'; hf_hub_download(repo_id=repo_id, filename='tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf')"
+# need to keep final img under 2GB
+#echo "Downloading tiny llama model..."
+#python -c "from huggingface_hub import hf_hub_download; repo_id = 'TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF'; hf_hub_download(repo_id=repo_id, filename='tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf')"
 # since script was run as root, we need to move downloaded files
-mkdir -p /home/ovos/.cache/huggingface/hub/
-mv /root/.cache/huggingface/hub/models--TheBloke--TinyLlama-1.1B-Chat-v1.0-GGUF/ /home/ovos/.cache/huggingface/hub/models--TheBloke--TinyLlama-1.1B-Chat-v1.0-GGUF/
+#mkdir -p /home/ovos/.cache/huggingface/hub/
+#mv /root/.cache/huggingface/hub/models--TheBloke--TinyLlama-1.1B-Chat-v1.0-GGUF/ /home/ovos/.cache/huggingface/hub/models--TheBloke--TinyLlama-1.1B-Chat-v1.0-GGUF/
 
 
 # Enable user systemd services.
