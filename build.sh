@@ -65,20 +65,20 @@ echo "Activating virtual environment..."
 source /home/$USER/.venvs/ovos/bin/activate
 
 echo "Installing hivemind"
-uv pip install --no-progress --pre hivemind-core hivemind-audio-binary-protocol hivemind-http-protocol hivemind-redis-database hivemind-sqlite-database
-uv pip install --no-progress git+https://github.com/JarbasHiveMind/HiveMind-matrix-bridge
-uv pip install --no-progress git+https://github.com/JarbasHiveMind/HiveMind-deltachat-bridge
+uv pip install --no-progress --pre hivemind-core hivemind-audio-binary-protocol hivemind-http-protocol hivemind-redis-database hivemind-sqlite-database  -c $CONSTRAINTS
+uv pip install --no-progress git+https://github.com/JarbasHiveMind/HiveMind-matrix-bridge  -c $CONSTRAINTS
+uv pip install --no-progress git+https://github.com/JarbasHiveMind/HiveMind-deltachat-bridge  -c $CONSTRAINTS
 
 echo "Installing servers"
-uv pip install --no-progress --pre ovos-tts-server ovos-translate-server ovos-stt-http-server ovos-persona-server
+uv pip install --no-progress --pre ovos-tts-server ovos-translate-server ovos-stt-http-server ovos-persona-server  -c $CONSTRAINTS
 uv pip install --no-progress -U g4f[all]
 
 echo "Installing OVOS plugins"
-uv pip install --no-progress --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper ovos-stt-plugin-chromium ovos-stt-plugin-citrinet ovos-stt-plugin-vosk ovos-tts-plugin-google-tx
+uv pip install --no-progress --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper ovos-stt-plugin-chromium ovos-stt-plugin-citrinet ovos-stt-plugin-vosk ovos-tts-plugin-google-tx  -c $CONSTRAINTS
 
 echo "Installing solver plugins"
 uv pip install --no-progress https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.2/llama_cpp_python-0.3.2-cp311-cp311-linux_aarch64.whl
-uv pip install --no-progress --pre ovos-solver-openai-persona-plugin ovos-solver-aiml-plugin ovos-solver-rivescript-plugin ovos-solver-gguf-plugin
+uv pip install --no-progress --pre ovos-solver-openai-persona-plugin ovos-solver-aiml-plugin ovos-solver-rivescript-plugin ovos-solver-gguf-plugin  -c $CONSTRAINTS
 
 echo "Downloading tiny llama model..."
 python -c "from huggingface_hub import hf_hub_download; repo_id = 'TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF'; hf_hub_download(repo_id=repo_id, filename='tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf')"
