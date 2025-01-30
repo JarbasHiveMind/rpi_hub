@@ -1,11 +1,11 @@
 {
-  "api_url": "http://0.0.0.0:8337",
+  "api_url": "http://0.0.0.0:1337",
   "key": "sk-xxx",
-  "model": "tinyllama",
+  "model": "gpt-4o-mini",
   "persona": "You are a helpful voice assistant with a friendly tone and fun sense of humor. You respond in 40 words or fewer.",
   "enable_memory": true,
   "memory_size": 15,
-  "name": "Tiny LLama",
+  "name": "GPT 4o Mini",
   "confirmation": false,
   "__mycroft_skill_firstrun": false
 }

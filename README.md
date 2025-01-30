@@ -53,6 +53,8 @@ echo -e "\e[1;34m
 | HiveMind-core                 | hivemind-websocket-plugin                                                                     | `ovos-core `                         | 5678 |                      |
 |                               | hivemind-http-plugin                                                                          | `ovos-core`                          | 5679 |                      |
 | STT                           | ovos-stt-plugin-chromium                                                                      | google proxy                         | 8085 | /stt                 |
+|                               | ovos-stt-plugin-citrinet                                                                      | per language                         | 8086 | /stt                 |
+|                               | ovos-stt-plugin-vosk                                                                          | per language                         | 8087 | /stt                 |
 |                               | ovos-stt-plugin-fasterwhisper                                                                 | `tiny`                               | 8081 | /stt                 |
 | Language Detection<br>(audio) | ovos-stt-plugin-fasterwhisper                                                                 | `tiny`                               | 8081 | /lang_detect         |
 | TTS                           | ovos-tts-plugin-google-tx                                                                     | google proxy                         | 8090 | /v2/synthesize       |

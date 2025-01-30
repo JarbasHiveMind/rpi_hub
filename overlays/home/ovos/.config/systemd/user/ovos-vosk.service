@@ -1,0 +1,11 @@
+[Unit]
+Description=OVOS STT Server (Vosk)
+PartOf=ovos.service
+After=ovos.service
+
+[Service]
+ExecStart=%h/.venvs/ovos/bin/python %h/.venvs/ovos/bin/ovos-stt-server --engine ovos-stt-plugin-vosk --multi --port 8087
+
+[Install]
+WantedBy=ovos.service
+

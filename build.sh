@@ -74,7 +74,7 @@ uv pip install --no-progress --pre ovos-tts-server ovos-translate-server ovos-st
 uv pip install --no-progress -U g4f[all]
 
 echo "Installing OVOS plugins"
-uv pip install --no-progress --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper ovos-stt-plugin-chromium ovos-tts-plugin-google-tx
+uv pip install --no-progress --pre ovos-google-translate-plugin ovos-tts-plugin-piper ovos-stt-plugin-fasterwhisper ovos-stt-plugin-chromium ovos-stt-plugin-citrinet ovos-stt-plugin-vosk ovos-tts-plugin-google-tx
 
 echo "Installing solver plugins"
 uv pip install --no-progress https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.2/llama_cpp_python-0.3.2-cp311-cp311-linux_aarch64.whl
@@ -100,15 +100,17 @@ ln -s /home/$USER/.config/systemd/user/hivemind-core.service /home/$USER/.config
 ln -s /home/$USER/.config/systemd/user/ovos-piper.service /home/$USER/.config/systemd/user/default.target.wants/ovos-piper.service
 ln -s /home/$USER/.config/systemd/user/ovos-google-tx.service /home/$USER/.config/systemd/user/default.target.wants/ovos-google-tx.service
 ln -s /home/$USER/.config/systemd/user/ovos-chromium.service /home/$USER/.config/systemd/user/default.target.wants/ovos-chromium.service
-ln -s /home/$USER/.config/systemd/user/ovos-whisper.service /home/$USER/.config/systemd/user/default.target.wants/ovos-whisper.service
 ln -s /home/$USER/.config/systemd/user/ovos-aiml.service /home/$USER/.config/systemd/user/default.target.wants/ovos-aiml.service
 ln -s /home/$USER/.config/systemd/user/ovos-ddg.service /home/$USER/.config/systemd/user/default.target.wants/ovos-ddg.service
 ln -s /home/$USER/.config/systemd/user/ovos-rivescript.service /home/$USER/.config/systemd/user/default.target.wants/ovos-rivescript.service
-ln -s /home/$USER/.config/systemd/user/ovos-tinyllama.service /home/$USER/.config/systemd/user/default.target.wants/ovos-tinyllama.service
 ln -s /home/$USER/.config/systemd/user/ovos-wordnet.service /home/$USER/.config/systemd/user/default.target.wants/ovos-wordnet.service
 ln -s /home/$USER/.config/systemd/user/ovos-wikipedia.service /home/$USER/.config/systemd/user/default.target.wants/ovos-wikipedia.service
 ln -s /home/$USER/.config/systemd/user/ovos-wolfram-alpha.service /home/$USER/.config/systemd/user/default.target.wants/ovos-wolfram-alpha.service
 ln -s /home/$USER/.config/systemd/user/g4f.service /home/$USER/.config/systemd/user/default.target.wants/g4f.service
+#ln -s /home/$USER/.config/systemd/user/ovos-vosk.service /home/$USER/.config/systemd/user/default.target.wants/ovos-vosk.service
+#ln -s /home/$USER/.config/systemd/user/ovos-citrinet.service /home/$USER/.config/systemd/user/default.target.wants/ovos-citrinet.service
+#ln -s /home/$USER/.config/systemd/user/ovos-whisper.service /home/$USER/.config/systemd/user/default.target.wants/ovos-whisper.service
+#ln -s /home/$USER/.config/systemd/user/ovos-tinyllama.service /home/$USER/.config/systemd/user/default.target.wants/ovos-tinyllama.service
 
 echo "Ensuring log file permissions for ovos group..."
 mkdir -p /home/$USER/.local/state/mycroft
